@@ -1,0 +1,232 @@
+<div class="header pb-6">
+	<div class="container-fluid">
+		<div class="header-body">
+			<div class="row align-items-center py-4">
+				<div class="col-lg-6 col-7">
+					<h6 class="h2 text-dark d-inline-block mb-0">Pembayaran</h6>
+
+					<nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+						<ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+							<li class=" breadcrumb-item">
+								<a href="javascript:void(0)"> <i class="fas fa-home text-dark"> </i> </a>
+							</li>
+						</ol>
+					</nav>
+				</div>
+
+				<div class="col-lg-6 col-5 text-right">
+					<a class="btn btn-sm btn-neutral" href="javascript:void(0)"> New </a>
+
+					<a class="btn btn-sm btn-neutral" href="javascript:void(0)">
+						Filters
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="card">
+    <div class="card-body bg-secondary">
+      <div class="ml-2 mr-2"><h5>Jumlah yang perlu dibayar</h5></div><br>
+      <input class="form-control text-right" type="text" value="RM 10.00">
+    </div>
+  </div>
+
+<accordion>
+  <accordion-group heading="Credit Card">
+    <div class=" card bg-gradient-secondary">
+        <div class=" card-body">
+          <div class=" row justify-content-between align-items-center">
+            <div class=" col">
+              <img
+                alt="Image placeholder"
+                src="assets/img/icons/cards/mastercard.png"
+              />
+            </div>
+
+            <div class=" col-auto">
+              <div class=" d-flex align-items-center">
+                <small class=" text-grey font-weight-bold mr-3">
+                  Make default
+                </small>
+
+                <div>
+                  <label class=" custom-toggle custom-toggle-grey">
+                    <input checked="" type="checkbox" />
+
+                    <span
+                      class=" custom-toggle-slider rounded-circle"
+                      data-label-off="No"
+                      data-label-on="Yes"
+                    >
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class=" mt-4">
+            <form class=" form-primary" role="form">
+              <div class=" form-group">
+                <div class=" input-group input-group-alternative mb-3">
+                  <div class=" input-group-prepend">
+                    <span class=" input-group-text">
+                      <i class=" ni ni-single-02"> </i>
+                    </span>
+                  </div>
+
+                  <input
+                    class=" form-control"
+                    placeholder="Name on card"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div class=" form-group">
+                <div class=" input-group input-group-alternative mb-3">
+                  <div class=" input-group-prepend">
+                    <span class=" input-group-text">
+                      <i class=" ni ni-credit-card"> </i>
+                    </span>
+                  </div>
+
+                  <input
+                    class=" form-control"
+                    placeholder="Card number"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div class=" row">
+                <div class=" col-6">
+                  <div class=" form-group">
+                    <div class=" input-group input-group-alternative mb-3">
+                      <div class=" input-group-prepend">
+                        <span class=" input-group-text">
+                          <i class=" ni ni-calendar-grid-58"> </i>
+                        </span>
+                      </div>
+
+                      <input
+                        class=" form-control"
+                        placeholder="MM/YY"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" col-6">
+                  <div class=" form-group">
+                    <div class=" input-group input-group-alternative">
+                      <div class=" input-group-prepend">
+                        <span class=" input-group-text">
+                          <i class=" ni ni-lock-circle-open"> </i>
+                        </span>
+                      </div>
+
+                      <input
+                        class=" form-control"
+                        placeholder="CCV"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button class=" btn btn-block btn-info" type="button" (click)="viewData()">
+                Pay
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </accordion-group>
+  <accordion-group heading="Online Banking" class="mt--2">
+    <p>Some content</p>
+  </accordion-group>
+</accordion>
+
+               <div class="text-right">
+                <button class="btn btn-primary" (click)="navigatePage('login')">Selesai
+                </button>
+               </div>
+
+</div>
+
+<ng-template #createUser>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Create New User
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="registerForm">
+            <div class="form-group">
+                <label class="form-control-label">Name</label>
+                <input 
+                  class="form-control"
+                  placeholder="Enter name"
+                  formControlName="name"
+                  type="text"
+                >
+                <ng-container *ngFor="let message of registerFormMessages.name">
+                    <div *ngIf="registerForm.get('name').hasError(message.type) && (registerForm.get('name').dirty || registerForm.get('name').touched)">
+                        <p class="error-message"><span>{{ message.message }}</span></p>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label">Email</label>
+                <input 
+                  class="form-control"
+                  placeholder="Enter email"
+                  formControlName="email"
+                  type="text"
+                >
+                <ng-container *ngFor="let message of registerFormMessages.email">
+                    <div *ngIf="registerForm.get('email').hasError(message.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">
+                        <p class="error-message"><span>{{ message.message }}</span></p>
+                    </div>
+                </ng-container>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button 
+            class="btn btn-success"
+            type="button"
+            (click)="confirm()"
+            [disabled]="!registerForm.valid"
+        >
+            Create
+        </button>
+
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            Close
+        </button>
+    </div>
+</ng-template>

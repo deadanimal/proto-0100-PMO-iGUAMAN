@@ -1,0 +1,230 @@
+<div class="header pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-dark d-inline-block mb-0">Semakan</h6>
+
+                    <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class=" breadcrumb-item">
+                                <a href="javascript:void(0)"> <i class="fas fa-file-invoice text-dark"> </i> </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)" class="text-dark"> Khidmat Nasihat </a>
+                            </li>
+                            <li aria-current="page" class="breadcrumb-item active">
+                                Semakan
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="col-lg-6 col-5 text-right">
+					<a class="btn btn-sm btn-neutral" (click)="navigatePage('daftar')">
+						Daftar Baru
+					</a>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <h3 class="m-0">Senarai Pendaftaran</h3>
+                </div>
+                <div class=" table-responsive">
+                        <table class=" table align-items-center table-flush">
+                            <thead class=" thead-light">
+                                <tr>
+                                    <th class=" sort" data-sort="name" scope="col">No.</th>
+
+                                    <th class=" sort" data-sort="budget" scope="col">Kategori Perkhidmatan</th>
+
+                                    <th class=" sort" data-sort="status" scope="col">Nama Pegawai</th>
+
+                                    <th scope="col">Status</th>
+
+                                    <th scope="col"></th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Kategori Sivil</td>
+                                    <td>Dr Syarifah</td>
+                                    <td>Diterima</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Sah Hadir</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Kategori Sivil</td>
+                                    <td>Dr Ali</td>
+                                    <td>Ditolak</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Sah Hadir</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Kategori Syariah</td>
+                                    <td>Dr Badrul Azmi</td>
+                                    <td>Diterima</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Sah Hadir</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Pendamping Guaman</td>
+                                    <td>Dr Badrul Azmi</td>
+                                    <td>Diterima</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Sah Hadir</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <td>Kategori Jenayah</td>
+                                    <td>Dr Nur Hakimi</td>
+                                    <td >Diterima</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Sah Hadir</button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #createUser>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Kemaskini
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="registerForm">
+            <div class="form-group">
+                <label for="example-text-input" class="form-control-label">No. Resit</label>
+                <input class="form-control" type="text" value="JBG112784" disabled="disabled">
+              </div>
+              <div class="form-group">
+                <label for="example-search-input" class="form-control-label">No Permohonan </label>
+                <input class="form-control" type="number" value="JBG.SEL(001)001/0320" disabled="disabled">
+              </div>
+              <div class="form-group">
+                <label for="example-email-input" class="form-control-label">Kategori Kes</label>
+                <input class="form-control" type="email" value="" >
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">Jenis Kes</label>
+                <input class="form-control" type="url" value="">
+              </div>
+              <div class="form-group">
+                <label for="example-text-input" class="form-control-label">Nama</label>
+                <input class="form-control" type="text" value="Kassim Ahmad" id="example-text-input">
+              </div>
+              <div class="form-group">
+                <label for="example-search-input" class="form-control-label">No. Kad Pengenalan</label>
+                <input class="form-control" type="number" value="941222085607" id="example-search-input">
+              </div>
+              <div class="form-group">
+                <label for="example-email-input" class="form-control-label">No. Polis/Tentera</label>
+                <input class="form-control" type="email" value="" id="example-email-input">
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">Umur</label>
+                <input class="form-control" type="url" value="35" id="example-url-input">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Jantina</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Lelaki</option>
+                  <option>Perempuan</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="example-number-input" class="form-control-label">Agama</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Islam</option>
+                  <option>Kristian</option>
+                  <option>Buddha</option>
+                  <option>Lain-lain</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">Alamat</label>
+                <input class="form-control" type="url" value="" id="example-url-input">
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">No. Telefon</label>
+                <input class="form-control" type="url" value="012-2310933" id="example-url-input">
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">Pekerjaan</label>
+                <input class="form-control" type="url" value="Pegawai Kerajaan" id="example-url-input">
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">Majikan</label>
+                <input class="form-control" type="url" value="Jabatan Pendaftaran Negara" id="example-url-input">
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">Alamat Majikan</label>
+                <input class="form-control" type="url" value="" id="example-url-input">
+              </div>
+              <div class="form-group">
+                <label for="example-url-input" class="form-control-label">No. Telefon Majikan</label>
+                <input class="form-control" type="url" value="012-2310933" id="example-url-input">
+              </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button 
+            class="btn btn-success"
+            type="button"
+            (click)="confirm()"
+            [disabled]="!registerForm.valid"
+        >
+            Sahkan
+        </button>
+
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            Tutup
+        </button>
+    </div>
+</ng-template>

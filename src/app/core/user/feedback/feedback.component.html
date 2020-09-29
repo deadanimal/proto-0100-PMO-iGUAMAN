@@ -1,0 +1,195 @@
+<div class="header pb-6">
+	<div class="container-fluid">
+		<div class="header-body">
+			<div class="row align-items-center py-4">
+				<div class="col-lg-6 col-7">
+					<h6 class="h2 text-dark d-inline-block mb-0">Maklum Balas</h6>
+
+					<nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+						<ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+							<li class=" breadcrumb-item">
+								<a href="javascript:void(0)"> <i class="fas fa-home text-dark"> </i> </a>
+							</li>
+						</ol>
+					</nav>
+				</div>
+
+				<div class="col-lg-6 col-5 text-right">
+					<a class="btn btn-sm btn-neutral" (click)="openModal(createUser)">
+						Baharu
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-secondary">
+                        <h3 class="m-0">Senarai Maklum Balas</h3>
+                    </div>
+                    <div class="class-body">
+                    
+
+                    </div>
+                    <div class=" table-responsive">
+                        <table class=" table align-items-center table-flush">
+                            <thead class=" thead-light">
+                                <tr>
+                                    <th class=" sort" data-sort="name" scope="col">No.</th>
+
+                                    <th class=" sort" data-sort="budget" scope="col">Kategori Perkhidmatan</th>
+
+                                    <th class=" sort" data-sort="status" scope="col">Nama Pegawai</th>
+
+                                    <th scope="col">Tarikh dibuat</th>
+
+                                    <th scope="col"></th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Kategori Sivil</td>
+                                    <td>Dr Syarifah</td>
+                                    <td>31 Ogos 2020</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Edit</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Kategori Sivil</td>
+                                    <td>Dr Ali</td>
+                                    <td>25 Ogos 2020</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Edit</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Kategori Syariah</td>
+                                    <td>Dr Badrul Azmi</td>
+                                    <td>3 Julai 2020</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Edit</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Pendamping Guaman</td>
+                                    <td>Dr Badrul Azmi</td>
+                                    <td>31 Ogos 2020</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Edit</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <td>Kategori Jenayah</td>
+                                    <td>Dr Nur Hakimi</td>
+                                    <td>6 Ogos 2020</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" (click)="openModal(createUser)">Edit</button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<ng-template #createUser>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Borang Maklum Balas
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        
+        <form [formGroup]="registerForm">
+          <bar-rating [(rate)]="rate" [max]="5"></bar-rating>
+            <div class="form-group">
+                <label class="form-control-label">Sila nyatakan (jika ada) cadangan tuan/puan untuk penambahbaikan kami di jabatan ini.</label>
+                <input 
+                  class="form-control"
+                  type="text"
+                  style="height:200px"
+                >
+            </div>
+            <div class="form-group">
+                <label class="form-control-label">Jantina</label>
+                <select class="form-control">
+                  <option>Lelaki</option>
+                  <option>Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label">Umur</label>
+                <select class="form-control">
+                  <option>25 tahun ke bawah</option>
+                  <option>26-35 tahun</option>
+                  <option>36-45 tahun</option>
+                  <option>46-55 tahun</option>
+                  <option>56 tahun ke atas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label">Bagaimana pelanggan mengetahui mengenai perkhidmatan ini.</label>
+                <select class="form-control">
+                  <option>Rakan-rakan/saudara mara</option>
+                  <option>Mahkamah</option>
+                  <option>Jabatan-jabatan Kerajaan</option>
+                  <option>Portal/laman sesawang JBG</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    
+    <bar-rating [(rate)]="rate" [max]="5"></bar-rating>
+
+    <div class="modal-footer">
+        <button 
+            class="btn btn-success"
+            type="button"
+            (click)="confirm()"
+            [disabled]="!registerForm.valid"
+        >
+            Hantar
+        </button>
+
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            X Tutup
+        </button>
+    </div>
+</ng-template>
