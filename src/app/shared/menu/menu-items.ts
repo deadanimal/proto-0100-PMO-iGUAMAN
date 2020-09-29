@@ -29,13 +29,13 @@ export const ROUTES: RouteInfo[] = [
     path: '/admin/dashboard',
     title: 'Dashboard',
     type: 'link',
-    icontype: 'fas fa-home text-purple'
+    icontype: 'fas fa-home text-black'
   },
   {
     path: '/admin/khidmat',
     title: 'Khidmat Nasihat',
     type: 'sub',
-    icontype: 'fas fa-file-invoice text-pink',
+    icontype: 'fas fa-file-invoice text-dark',
     collapse: 'khidmat',
     isCollapsed: true,
     children: [
@@ -47,25 +47,25 @@ export const ROUTES: RouteInfo[] = [
     path: '/admin/appointment',
     title: 'Temujanji',
     type: 'link',
-    icontype: ''
+    icontype: 'fas fa-braille text-dark'
   },
   {
     path: '/admin/report',
     title: 'Laporan',
     type: 'link',
-    icontype: 'fas fa-chart-bar text-red'
+    icontype: 'fas fa-chart-bar text-dark'
   },
   {
     path: '/admin/feedback2',
     title: 'Maklum Balas',
     type: 'link',
-    icontype: 'fas fa-chart-bar text-red'
+    icontype: 'fas fa-sliders-h text-dark'
   },
   {
     path: '/admin/management',
     title: 'Sistem',
     type: 'sub',
-    icontype: 'fas fa-file-invoice text-pink',
+    icontype: 'fas fa-cog text-dark',
     collapse: 'management',
     isCollapsed: true,
     children: [
@@ -94,13 +94,13 @@ export const ROUTESUSER: RouteInfo[] = [
     path: '/user/dashboard',
     title: 'Dashboard',
     type: 'link',
-    icontype: 'fas fa-desktop text-warning'
+    icontype: 'fas fa-desktop text-dark'
   },
   {
     path: '/user',
     title: 'Pendaftaran',
     type: 'sub',
-    icontype: 'fas fa-file-invoice text-pink',
+    icontype: 'fas fa-file-invoice text-dark',
     collapse: 'pendaftaran',
     isCollapsed: true,
     children: [
@@ -112,13 +112,13 @@ export const ROUTESUSER: RouteInfo[] = [
     path: '/user/temujanji',
     title: 'Temujanji',
     type: 'link',
-    icontype: 'fas fa-home text-purple'
+    icontype: 'fas fa-braille text-dark'
   },
   {
     path: '/user/feedback',
     title: 'Maklum Balas',
     type: 'link',
-    icontype: 'fas fa-tasks text-red'
+    icontype: 'fas fa-sliders-h text-dark'
   }/*,
   {
     path: '/report',
